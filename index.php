@@ -15,39 +15,26 @@
     require 'class/Autoloader.php';
     Autoloader::register();  
     
-    
-    $hello = new Test("maxime");
-    $hello = $hello->ttest(); 
-    var_dump($hello);
-    echo $hello;
-    // On recherche les fichiers
     $Fichier = new Fichier("donnees");
     $Fichier = $Fichier->parcourirFichiers();
    
-    // On en extrait les lignes de chaque fichier
-    for($i=0;$i<count($Fichier);$i++){
-        $Ligne = new Fichier("donnees");
-        $Ligne = $Ligne->parcourirLignesFichier($Fichier[$i]);
-        
-        var_dump($Ligne);
-        //Traitement pour chaque fichier
-        for($i=0;$i<count($Ligne); $i++){
-
-             $ligneTableau[0] = explode(" ", $Ligne[$i]);
-            
-            // Nouvelle annee
-            if($ligneTableau[0][0] == "Annee"){
-                var_dump($ligneTableau[0][0]);
-                var_dump($ligneTableau[0][2]);
-            }
-            
-        }
+    $Ligne = new Fichier("donnees");
+    $Ligne = $Ligne->parcourirLignesFichier($Fichier[0]);
+    
+    $Ligne2 = new Fichier("donnees");
+    $Ligne2 = $Ligne2->parcourirLignesFichier($Fichier[1]);
+    
+    $Ligne3 = new Fichier("donnees");
+    $Ligne3 = $Ligne3->parcourirLignesFichier($Fichier[2]);
+    
+    $TriFinal = new Fichier("donnees");
+    $TriFinal->tri($Ligne);
+    $TriFinal->tri($Ligne2);
+    $TriFinal->tri($Ligne3);
          
-    }
     
-    
-   // var_dump($Ligne);
-    
+
+
     
     
 
