@@ -55,30 +55,28 @@
 
         }
         
+        /**
+         * Fonction permettant le tri des données stockées dans les fichiers du dossier donnees et les enregistre en bdd
+         * @param type $Ligne array contenant les lignes d'un fichier
+         */
         public function tri($Ligne){
-            
-        /////////////////Traitement pour chaque fichier///////////////////
             $annee = "";
             $secteur = "";
             $chiffre = "";
             $salaries = "";
             $effectif = "";
-            
+        // Boucle sur chaque ligne d'un fichier 
         for($i=0;$i<count($Ligne); $i++){
-
+            // Division entre les mots de chaque ligne
              $ligneTableau[0] = explode(" ", $Ligne[$i]);
             // Detection Annee
             if($ligneTableau[0][0] == "Annee"){    
-                $annee = intval(str_replace(";","",$ligneTableau[0][2]));
-            //    var_dump($annee);    
+                $annee = intval(str_replace(";","",$ligneTableau[0][2]));   
             }
-
             // Detection secteur
             if($ligneTableau[0][0] == "Secteur"){
                 $secteur = str_replace(";","",$ligneTableau[0][2]);
-              //  var_dump($secteur);
             }
-            
             // Detection CA
             if($ligneTableau[0][0] == "Chiffre"){
                 if(!isset($ligneTableau[0][3])){
@@ -86,13 +84,10 @@
                 }
                 $chiffre = explode(";", $ligneTableau[0][3]);
                 $chiffre = array_splice($chiffre, 1);
-                
                 for($j=0;$j<4;$j++){
                     $chiffre[$j] = intval($chiffre[$j]);
                 }
-             //  var_dump($chiffre);
-            }
-            
+            }   
             // Detection nombre salaries
             if($ligneTableau[0][0] == "Nombre"){
                 if(!isset($ligneTableau[0][3])){
@@ -104,9 +99,8 @@
                 for($j=0;$j<4;$j++){
                     $salaries[$j] = intval($salaries[$j]);
                 }
-             //   var_dump($salaries);
             }
-            
+            // Détection des effectifs
             if($ligneTableau[0][0] == "Effectif"){
                  if(!isset($ligneTableau[0][7])){
                     $ligneTableau[0][7] = "string;0;0;0;0";
@@ -116,18 +110,16 @@
                 $effectif = str_replace("\n","",$effectif);
                 $effectif = str_replace("\r","",$effectif);
                 
-       
                 for($j=0;$j<4;$j++){
                     $effectif[$j] = intval($effectif[$j]);
                 }
-              //  var_dump($effectif);
             }
-            
+            // Quand toutes les données sont détectées, envoi en base de donnéee
             if($annee != "" and $secteur != "" and $chiffre != "" and $salaries !="" and $effectif != "" ){
-               $tt = new BaseDonnees();
-               $tt->envoiDonnee($annee,"Chiffre d\'affaire HT",$secteur,$chiffre[0],$chiffre[1],$chiffre[2],$chiffre[3]);
-               $tt->envoiDonnee($annee,"Nombre d'entreprise",$secteur,$salaries[0],$salaries[1],$salaries[2],$salaries[3]);
-               $tt->envoiDonnee($annee,"Effectif salariés temps plein",$secteur,$effectif[0],$effectif[1],$effectif[2],$effectif[3]);
+                $bdd = new BaseDonnees();
+                $bdd->envoiDonnee($annee,"Chiffre d\'affaire HT",$secteur,$chiffre[0],$chiffre[1],$chiffre[2],$chiffre[3]);
+                $bdd->envoiDonnee($annee,"Nombre d'entreprise",$secteur,$salaries[0],$salaries[1],$salaries[2],$salaries[3]);
+                $bdd->envoiDonnee($annee,"Effectif salariés temps plein",$secteur,$effectif[0],$effectif[1],$effectif[2],$effectif[3]);
                
                 $annee = "";
                 $secteur = "";
@@ -135,7 +127,6 @@
                 $salaries = "";
                 $effectif = "";
             }
-   
         }
         }
         
