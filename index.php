@@ -18,10 +18,13 @@
         <button>Mise à jour des données</button>
         <div id="status"></div>
         <div class="graphtaille">
-            <canvas id="myChart"></canvas>
+            <canvas id="myChartEmploye"></canvas>
         </div>
         <div class="graphtaille">
-            <canvas id="myChartLine"></canvas>
+            <canvas id="myChartEntreprise"></canvas>
+        </div>
+        <div class="graphtaille">
+            <canvas id="myChartCA"></canvas>
         </div>
         <script>
 
