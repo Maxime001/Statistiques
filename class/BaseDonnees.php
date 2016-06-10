@@ -39,8 +39,8 @@ class BaseDonnees {
      * @param type $moyenne
      * @param type $grande
      */
-    public function envoiDonnee($valeur,$critere,$secteur,$tres_petite,$petite,$moyenne,$grande){
-        $this->bdd->exec('INSERT INTO statistiques(annee,critere,typeEntreprise,tres_petite,petite,moyenne,grande) VALUES('.$valeur.',"'.$critere.'","'.$secteur.'",'.$tres_petite.','.$petite.','.$moyenne.','.$grande.')');
+    public function envoiDonnee($valeur,$critere,$secteur,$tres_petite,$petite,$moyenne,$grande,$total){
+        $this->bdd->exec('INSERT INTO statistiques(annee,critere,typeEntreprise,tres_petite,petite,moyenne,grande,total) VALUES('.$valeur.',"'.$critere.'","'.$secteur.'",'.$tres_petite.','.$petite.','.$moyenne.','.$grande.','.$total.')');
     }
     
     /**
