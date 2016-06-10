@@ -37,7 +37,7 @@ function afficherGraphEmploye(data) {
         labels: data.annees,
         datasets: [
             {
-                label: "My First dataset",
+                label: "construction",
                 fill: false,
                 lineTension: 0.1,
                 backgroundColor: "rgba(75,192,192,0.4)",
@@ -57,7 +57,7 @@ function afficherGraphEmploye(data) {
                 pointHitRadius: 10,
                 data: data.secteurActivites.construction.NombreSalaries,
             },{
-                label: "My First dataset",
+                label: "immobilier",
                 fill: false,
                 lineTension: 0.1,
                 backgroundColor: "rgba(255, 99, 132,0.4)",
@@ -77,7 +77,7 @@ function afficherGraphEmploye(data) {
                 pointHitRadius: 10,
                 data: data.secteurActivites.immobilier.NombreSalaries,
             },{
-                label: "My First dataset",
+                label: "industrie",
                 fill: false,
                 lineTension: 0.1,
                 backgroundColor: "rgba(54, 162, 235,0.4)",
