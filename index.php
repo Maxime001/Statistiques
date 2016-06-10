@@ -30,7 +30,7 @@
             </br>
             
             <div  class="fond affichageJauges">
-                <div class= "mainTitle">Graphique 1 </div> 
+                <div class= "mainTitle">Nombre d'employés par année</div>
                 <div class="graphtaille">
                     <canvas id="myChartEmploye"></canvas>
                 </div>
@@ -38,7 +38,7 @@
             </br>
             
             <div  class="fond affichageJauges">
-                <div class= "mainTitle">Graphique 2 </div> 
+                <div class= "mainTitle">Nombre d'entreprises par année</div>
                 <div class="graphtaille">
                     <canvas id="myChartEntreprise"></canvas>
                 </div>
@@ -46,7 +46,7 @@
             </br>
             
             <div  class="fond affichageJauges">
-                <div class= "mainTitle">Graphique 3 </div> 
+                <div class= "mainTitle">Chiffre d'affaire des entreprises par année</div>
                 <div class="graphtaille">
                    <canvas id="myChartCA"></canvas>
                 </div>
