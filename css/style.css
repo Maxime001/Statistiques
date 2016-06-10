@@ -1,14 +1,64 @@
-#myChart{
-    height: 100px;
-    width: 100px;
+@font-face{
+    font-family: "MainTitle";
+    src: url('font/Quicksand-Regular.otf');
+}
+@font-face{
+    font-family: "PrincipalTitle";
+    src: url('font/saxmono.ttf');
 }
 
-#myChartLine{
-    height: 100px;
-    width: 100px;
-}
 
 .graphtaille{
     height: 50%;
-    width: 50%;
+    width: auto;
+}
+
+
+h1 {
+    color:white;
+    font-family:calibri;
+    text-align:center;
+}
+
+.main{
+    background-color:#34495E;
+}
+
+.text{
+    font-family:"MainTitle";
+    padding-right:5px;
+}
+
+.mainTitle{
+ 
+    font-size:20px;
+    margin:-1px;
+    padding: -1px;
+    text-align:center;
+    border-radius:2px;
+    border:1px solid rgba(255, 255, 255, 0.6);
+    color:white;
+    opacity:0.9;
+    background-color:#34495E;
+    font-family: MainTitle;
+    
+}
+
+.fond{
+    background-color:white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius:5px;
+    z-index:-10;
+    box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.affichageJauges{
+    height:auto;
+    margin-top:80px;
+    z-index:-10;
+    min-width:408px;
+    padding:-25px;
+    margin:0 auto;
+    padding:0 auto;
+    width:70%;
 }

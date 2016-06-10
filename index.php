@@ -6,6 +6,8 @@
 <html>
     <head>
         <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/contenu.css"/>
+        <link rel="stylesheet" href="css/main.css"/>
         <link rel="stylesheet" href="css/style.css"/>
         <script src="js/libs/jquery-2.2.4.js"></script>
         <script src="js/libs/Chart.js"></script>
@@ -14,18 +16,34 @@
         <script src="js/main.js"></script>
     </head>
     
-    <body>
-        <button>Mise à jour des données</button>
-        <div id="status"></div>
-        <div class="graphtaille">
-            <canvas id="myChart"></canvas>
+    <body class="main">
+        <h1>TITRE DES GRAPHIQUES</h1>
+       
+        <div class="centerPage" >
+            <div  class="fond affichageJauges">
+                <div class= "mainTitle">Graphique 1 </div> 
+                <button>Mise à jour des données</button>
+                <div id="status"></div>
+                
+            </div>
         </div>
-        <div class="graphtaille">
-            <canvas id="myChartLine"></canvas>
+            
+            <div  class="fond affichageJauges">
+            <div class= "mainTitle">Graphique 1 </div> 
+                <div class="graphtaille">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+            </br>
+            <div  class="fond affichageJauges">
+            <div class= "mainTitle">Graphique 2 </div> 
+                <div class="graphtaille">
+                    <canvas id="myChartLine"></canvas>
+                </div>
+            </div>
+            </br>
+            </br>
         </div>
-        <script>
-
-        </script>
 
     </body>
 </html>
