@@ -42,4 +42,12 @@ class BaseDonnees {
     public function envoiDonnee($valeur,$critere,$secteur,$tres_petite,$petite,$moyenne,$grande){
         $this->bdd->exec('INSERT INTO statistiques(annee,critere,typeEntreprise,tres_petite,petite,moyenne,grande) VALUES('.$valeur.',"'.$critere.'","'.$secteur.'",'.$tres_petite.','.$petite.','.$moyenne.','.$grande.')');
     }
+    
+    /**
+     * Supprime tout le contenu d'une table
+     * @param type $table table à supprimer 
+     */
+    public function videTable($table){
+        $this->bdd->exec('DELETE FROM '.$table.'');
+    }
 }
