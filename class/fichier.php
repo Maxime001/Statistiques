@@ -117,9 +117,12 @@
             // Quand toutes les données sont détectées, envoi en base de donnéee
             if($annee != "" and $secteur != "" and $chiffre != "" and $salaries !="" and $effectif != "" ){
                 $bdd = new BaseDonnees();
-                $bdd->envoiDonnee($annee,"Chiffre d\'affaire HT",$secteur,$chiffre[0],$chiffre[1],$chiffre[2],$chiffre[3]);
-                $bdd->envoiDonnee($annee,"Nombre d'entreprise",$secteur,$salaries[0],$salaries[1],$salaries[2],$salaries[3]);
-                $bdd->envoiDonnee($annee,"Effectif salariés temps plein",$secteur,$effectif[0],$effectif[1],$effectif[2],$effectif[3]);
+                $totalChiffre = $chiffre[0]+$chiffre[1]+$chiffre[2]+$chiffre[3];
+                $totalSalaries = $salaries[0]+$salaries[1]+$salaries[2]+$salaries[3];
+                $totalEffectif = $effectif[0]+$effectif[1]+$effectif[2]+$effectif[3];
+                $bdd->envoiDonnee($annee,"Chiffre d\'affaire HT",$secteur,$chiffre[0],$chiffre[1],$chiffre[2],$chiffre[3],$totalChiffre);
+                $bdd->envoiDonnee($annee,"Nombre d'entreprise",$secteur,$salaries[0],$salaries[1],$salaries[2],$salaries[3],$totalSalaries);
+                $bdd->envoiDonnee($annee,"Effectif salariés temps plein",$secteur,$effectif[0],$effectif[1],$effectif[2],$effectif[3],$totalEffectif);
                
                 $annee = "";
                 $secteur = "";
