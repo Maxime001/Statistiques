@@ -22,35 +22,39 @@
        
         <div class="centerPage" >
             <div  class="fond affichageJauges">
-                <div class= "mainTitle">Graphique 1 </div> 
+                <div class= "mainTitle">Mise a jour des données </div> 
                 <button>Mise à jour des données</button>
-                <div id="status"></div>
-                
+                <div id="status"></div>   
             </div>
-        </div>
+            </br>
             
             <div  class="fond affichageJauges">
-            <div class= "mainTitle">Graphique 1 </div> 
+                <div class= "mainTitle">Graphique 1 </div> 
                 <div class="graphtaille">
-            <canvas id="myChartEmploye"></canvas>
-        </div>
+                    <canvas id="myChartEmploye"></canvas>
+                </div>
             </div>
             </br>
-            <div  class="fond affichageJauges">
-            <div class= "mainTitle">Graphique 2 </div> 
-               <div class="graphtaille">
-            <canvas id="myChartEntreprise"></canvas>
             
-             <div class="graphtaille">
-            <canvas id="myChartCA"></canvas>
-
-        </div>
-        </div>
+            <div  class="fond affichageJauges">
+                <div class= "mainTitle">Graphique 2 </div> 
+                <div class="graphtaille">
+                    <canvas id="myChartEntreprise"></canvas>
+                </div>
             </div>
             </br>
-            </br>
-
+            
+            <div  class="fond affichageJauges">
+                <div class= "mainTitle">Graphique 3 </div> 
+                <div class="graphtaille">
+                   <canvas id="myChartCA"></canvas>
+                </div>
+            </div>
         </div>
+        </br>
+        </br>
+
+
 
     </body>
 </html>
