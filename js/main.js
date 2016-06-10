@@ -1,6 +1,7 @@
 $(document).ready(function() {
-
-$('button').on('click',function(){
-   miseAJourDonneesBdd(); 
-});
+    
+    $('button').on('click',function(){
+       miseAJourDonneesBdd(); 
+    });
+    
 });
