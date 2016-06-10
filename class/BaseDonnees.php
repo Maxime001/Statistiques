@@ -9,7 +9,7 @@ class BaseDonnees {
     
     public function __construct(){
         try{
-            $this->bdd = new PDO('mysql:host=localhost;dbname=statistiques;charset=utf8', "root", "P3gaze1992");
+            $this->bdd = new PDO('mysql:host=localhost;dbname=statistiques;charset=utf8', "root", "");
             $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
             }
         catch(Exception $e){die('Erreur : '.$e->getMessage());}
@@ -41,5 +41,13 @@ class BaseDonnees {
      */
     public function envoiDonnee($valeur,$critere,$secteur,$tres_petite,$petite,$moyenne,$grande){
         $this->bdd->exec('INSERT INTO statistiques(annee,critere,typeEntreprise,tres_petite,petite,moyenne,grande) VALUES('.$valeur.',"'.$critere.'","'.$secteur.'",'.$tres_petite.','.$petite.','.$moyenne.','.$grande.')');
+    }
+    
+    /**
+     * Supprime tout le contenu d'une table
+     * @param type $table table à supprimer 
+     */
+    public function videTable($table){
+        $this->bdd->exec('DELETE FROM '.$table.'');
     }
 }
