@@ -18,13 +18,14 @@
     
 
     <body class="main">
-        <h1>TITRE DES GRAPHIQUES</h1>
+        <h2>Graphiques de l'évolution du Chiffre d'affaire, du nombre d'entreprises et d'employés dans le secteur Mulhousien</h2>
        
         <div class="centerPage" >
             <div  class="fond affichageJauges">
-                <div class= "mainTitle">Mise a jour des données </div> 
-                <button>Mise à jour des données</button>
-                <div id="status"></div>   
+                <div class= "mainTitle" class="boutonCentrage">Mise a jour des données </div> 
+                <button class="submitButton">Mise à jour des données</button>
+                <span  id="status">Les données ont étés mises à jour à </span>   
+                <span id="time" style="display:none"></span>
             </div>
             </br>
             
