@@ -1,18 +1,26 @@
 $(document).ready(function () {
     getJson();
-
+    getJsonTest();
 });
 
-function getJson(){
-    $.getJSON("js/donnees.json", function (data) {
-        afficherGraphLign(data);
-        afficheBar(data);
+function getJsonTest(){
+    $.getJSON("js/donneesTest.json", function (data) {
+        console.log(data.annees);
+        console.log(data.secteurActivites.construction.chiffreAffaire);
     });
 }
 
-function afficherGraphLign(data) {
+function getJson(){
+    $.getJSON("js/donnees.json", function (data) {
+        afficherGraphEmploye(data);
+        afficherGraphEntreprise(data);
+        afficherGraphCA(data);
+    });
+}
+
+function afficherGraphEmploye(data) {
     console.log("graph line se lance !");
-    var ctxy = document.getElementById("myChartLine");
+    var ctxy = document.getElementById("myChartEmploye");
 
 
 
@@ -49,8 +57,8 @@ function afficherGraphLign(data) {
     });
 }
 
-function afficheBar(data){
-    var ctx = document.getElementById("myChart");
+function afficherGraphEntreprise(data){
+    var ctx = document.getElementById("myChartEntreprise");
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -81,4 +89,9 @@ function afficheBar(data){
             fullWidth: false
         }
     });
+}
+
+function afficherGraphCA(data){
+    console.log("Afficher le graph CA");
+    document.getElementById("myChartCA").innerHTML = "Afficher le graph CA !";
 }

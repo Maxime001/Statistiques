@@ -16,6 +16,7 @@
         <script src="js/main.js"></script>
     </head>
     
+
     <body class="main">
         <h1>TITRE DES GRAPHIQUES</h1>
        
@@ -31,18 +32,24 @@
             <div  class="fond affichageJauges">
             <div class= "mainTitle">Graphique 1 </div> 
                 <div class="graphtaille">
-                    <canvas id="myChart"></canvas>
-                </div>
+            <canvas id="myChartEmploye"></canvas>
+        </div>
             </div>
             </br>
             <div  class="fond affichageJauges">
             <div class= "mainTitle">Graphique 2 </div> 
-                <div class="graphtaille">
-                    <canvas id="myChartLine"></canvas>
-                </div>
+               <div class="graphtaille">
+            <canvas id="myChartEntreprise"></canvas>
+            
+             <div class="graphtaille">
+            <canvas id="myChartCA"></canvas>
+
+        </div>
+        </div>
             </div>
             </br>
             </br>
+
         </div>
 
     </body>
