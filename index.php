@@ -7,7 +7,6 @@
     <head>
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="css/contenu.css"/>
-        <link rel="stylesheet" href="css/main.css"/>
         <link rel="stylesheet" href="css/style.css"/>
         <script src="js/libs/jquery-2.2.4.js"></script>
         <script src="js/libs/Chart.js"></script>
@@ -47,8 +46,8 @@
             
             <div  class="fond affichageJauges">
                 <div class= "mainTitle">Chiffre d'affaire des entreprises par année</div>
-                <div class="graphtaille">
-                   <canvas id="myChartCA"></canvas>
+                <div class="graphtaille" id="graphe3">
+
                 </div>
             </div>
         </div>

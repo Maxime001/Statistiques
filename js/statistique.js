@@ -1,31 +1,22 @@
-$(document).ready(function () {
-    getJson();
-    getJsonTest();
-});
-
-function getJsonTest(){
-    $.getJSON("js/donneesTest.json", function (data) {
-        console.log(data.annees);
-        console.log("------------------------------")
-        console.log(data.secteurActivites);
-        console.log("------------------------------")
-        console.log(data.secteurActivites.construction.chiffreAffaire);
-        console.log("Boucle for")
-        for(secteurActivite in data.secteurActivites){
-            //console.log(secteurActivite.chiffreAffaire);
-            console.log(data.secteurActivites[secteurActivite].chiffreAffaire);
-        }
-    });
-}
-
 function getJson(){
     $.getJSON("js/donneesTest.json", function (data) {
 
         afficherGraphEmploye(data);
         afficherGraphEntreprise(data);
-        afficherGraphCA(data);
+        afficheGraphe3(data);
     });
 }
+
+function afficheGraphe3(data){
+    var nombreAnnee = data.annees.length;
+        for(var j=0;j<nombreAnnee;j++){
+            document.getElementById("graphe3").innerHTML += '<p><div style=\"text-align:center;font-family:calibri;font-size:25px\">Année '+data.annees[j]+' </div></p><p><canvas id=\"'+j+'"></canvas></p>';
+        }
+        for(var i=0;i<nombreAnnee;i++){
+           afficherGraphCA(data,i);
+        }
+}
+
 
 function afficherGraphEmploye(data) {
     console.log("graph line se lance !");
@@ -95,7 +86,7 @@ function afficherGraphEmploye(data) {
                 pointHoverBorderWidth: 2,
                 pointRadius: 1,
                 pointHitRadius: 10,
-                data: data.secteurActivites.industrie.NombreSalaries,
+                data: data.secteurActivites.industrie.NombreSalaries
             }
         ]
     };
@@ -150,7 +141,38 @@ function afficherGraphEntreprise(data){
     });
 }
 
-function afficherGraphCA(data){
+// camembert
+function afficherGraphCA(data,i){
+    var ctx = document.getElementById(i);
     console.log("Afficher le graph CA");
-    document.getElementById("myChartCA").innerHTML = "Afficher le graph CA !";
+    
+    var data = {
+    labels: [
+        "Red",
+        "Blue",
+        "Yellow"
+    ],
+    datasets: [
+        {
+            data: [data.secteurActivites.construction.chiffreAffaire[i],data.secteurActivites.immobilier.chiffreAffaire[i],data.secteurActivites.industrie.chiffreAffaire[i]],
+            backgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ],
+            hoverBackgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ]
+        }]
+};
+    
+    var myPieChart = new Chart(ctx,{
+        type: 'pie',
+        data: data,
+
+    });
+    
 }
+

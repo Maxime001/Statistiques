@@ -68,9 +68,12 @@
         // Boucle sur chaque ligne d'un fichier 
         for($i=0;$i<count($Ligne); $i++){
             // Division entre les mots de chaque ligne
+            $Ligne[$i] = utf8_encode($Ligne[$i]);
              $ligneTableau[0] = explode(" ", $Ligne[$i]);
+             
+          
             // Detection Annee
-            if($ligneTableau[0][0] == "Annee"){    
+            if($ligneTableau[0][0] == "Année"){    
                 $annee = intval(str_replace(";","",$ligneTableau[0][2]));   
             }
             // Detection secteur
