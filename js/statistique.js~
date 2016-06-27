@@ -1,6 +1,6 @@
 function getJson(){
-    $.getJSON("js/donneesTest.json", function (data) {
-//    $.getJSON("js/donneesTest_v2.json", function (data) {
+//    $.getJSON("js/donneesTest.json", function (data) {
+    $.getJSON("js/donneesTest_v2.json", function (data) {
 
         afficherGraphEmploye(data);
         afficherGraphEntreprise(data);

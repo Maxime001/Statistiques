@@ -14,7 +14,7 @@ function miseAJourDonneesBdd(){
            }
     });
 }
-
+/*
 function rechercheDonneesBdd() {
     $.ajax({
         url : 'rechercheDonnees.php',
@@ -24,4 +24,4 @@ function rechercheDonneesBdd() {
 	}
     });
 
-}
+}*/
