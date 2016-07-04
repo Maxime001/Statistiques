@@ -8,7 +8,7 @@ global $username ;
 $username = "root";
 
 global $password;
-$password = "P3gaze1992";
+$password = "";
 
 global $namebase;
 $namebase = "statistiques";
