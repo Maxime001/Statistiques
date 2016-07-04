@@ -1,7 +1,5 @@
 function getJson(){
     $.getJSON("js/donneesTest.json", function (data) {
-//    $.getJSON("js/donneesTest_v2.json", function (data) {
-
         afficherGraphEmploye(data);
         afficherGraphEntreprise(data);
         afficheGraphe3(data);
@@ -47,7 +45,8 @@ function afficherGraphEmploye(data) {
                 pointHoverBorderWidth: 2,
                 pointRadius: 1,
                 pointHitRadius: 10,
-                data: data.secteurActivites.Construction.NombreSalaries,
+               // pointStyle:"cross",
+                data: data.secteurActivites.Construction.NombreSalaries
             },{
                 label: "immobilier",
                 fill: false,
@@ -171,7 +170,7 @@ function afficherGraphCA(data,i){
     
     var myPieChart = new Chart(ctx,{
         type: 'pie',
-        data: data,
+        data: data
 
     });
     

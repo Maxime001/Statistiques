@@ -1,6 +1,7 @@
 <?php
     require 'class/Autoloader.php';
     Autoloader::register();  
+    include "rechercheDonnees.php";
 ?>
 <!doctype html>
 <html>
@@ -14,16 +15,8 @@
         <script src="js/ajax.js"></script>
         <script src="js/main.js"></script>
     </head>
-    
-
     <body class="main">
-
-<?php
-include "rechercheDonnees.php";
-?>
-
-        <h2>Graphiques de l'évolution du Chiffre d'affaire, du nombre d'entreprises et d'employés dans le secteur Mulhousien</h2>
-       
+        <h2>Graphiques de l'évolution du Chiffre d'affaire, du nombre d'entreprises et d'employés dans le secteur Mulhousien</h2>   
         <div class="centerPage" >
             <div  class="fond affichageJauges">
                 <div class= "mainTitle" class="boutonCentrage">Mise a jour des données </div> 
@@ -32,7 +25,7 @@ include "rechercheDonnees.php";
                 <span id="time" style="display:none"></span>
             </div>
             </br>
-            
+
             <div  class="fond affichageJauges">
                 <div class= "mainTitle">Nombre d'employés par année</div>
                 <div class="graphtaille">
@@ -58,8 +51,5 @@ include "rechercheDonnees.php";
         </div>
         </br>
         </br>
-
-
-
     </body>
 </html>

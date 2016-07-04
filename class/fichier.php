@@ -1,8 +1,7 @@
 <?php
 
     class Fichier{
-
-       
+   
         /**
          * 
          * @param type $nomDossier nom du dossier contenant les fichiers statistiques
@@ -10,9 +9,7 @@
         public function __construct($nomDossier){
             $this->nomDossier = $nomDossier;
         }
-        
-        
-        
+         
         /**
          * Fonction permettant de connaitre le nom et la quantité de fichiers à traiter
          * @return array liste des fichiers avec leurs extension.
@@ -134,9 +131,5 @@
                 $effectif = "";
             }
         }
-        }
-        
-        
-        
-        
     }
+}

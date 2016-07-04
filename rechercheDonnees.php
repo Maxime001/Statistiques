@@ -1,12 +1,6 @@
 <?php
 
-//$nomFichierJSON = "js/donneesTest_v2.json";
-//$nomFichierJSON = "js/donneesTest.json";
-
-//include "config.php";
-
-//$donnees = new BaseDonnees();
-$donnees = new BaseDonnees($hostname, $username,$password, $namebase);
+$donnees = new BaseDonnees();
 $AllAnnee= $donnees->rechercheDonneesDistinct("annee");
 $AllTypeEntreprise=$donnees->rechercheDonneesDistinct("typeEntreprise");
 
@@ -17,16 +11,14 @@ $t->{'annees'}= $AllAnnee;
 $file->ecrireJSON($t);
 
 
-$critereDB = array("Chiffre","Nombre", "Effectif"); ////$critereDB = array("Chiffre d'affaire","Nombre d'entreprise", "Effectif"); // marche pas
+$critereDB = array("Chiffre","Nombre", "Effectif");
 $critereJSON = array("chiffreAffaire", "NombreEntreprises", "NombreSalaries");
 
 for($j = 0; $j < sizeOf($critereDB); $j++) {
 	for($i = 0; $i < sizeOf($AllTypeEntreprise); $i++) {
-		$res = $donnees->rechercheDonnees($AllTypeEntreprise[$i], $critereDB[$j]) ;
-		$t->{'secteurActivites'}->{rtrim($AllTypeEntreprise[$i])}->{$critereJSON[$j]} = $res;
-		$file->ecrireJSON($t);
+            $res = $donnees->rechercheDonnees($AllTypeEntreprise[$i], $critereDB[$j]) ;
+            $t->{'secteurActivites'}->{rtrim($AllTypeEntreprise[$i])}->{$critereJSON[$j]} = $res;
+            $file->ecrireJSON($t);
 	}
 
 }
-
-?>

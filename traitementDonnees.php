@@ -1,7 +1,8 @@
 <?php
      require 'class/Autoloader.php';
      Autoloader::register();  
-   
+     
+
      // Avant de rajouter des données / pour ne pas les dupliquer, on vide la table
      $Delete = new BaseDonnees();
      $Delete->videTable("statistiques");

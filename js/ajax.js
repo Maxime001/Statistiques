@@ -20,7 +20,6 @@ function rechercheDonneesBdd() {
         url : 'rechercheDonnees.php',
         type : 'GET',
 	success:function() {
-		alert("titit");
 	}
     });
 

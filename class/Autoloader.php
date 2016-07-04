@@ -1,11 +1,10 @@
 <?php
+   
+include "config.php";
+
     /**
      * Classe d'autoloader - chargement automatique des différentes classes
      */
-
-include "config.php";
-
-
    class Autoloader {
 	
 	static function register(){
